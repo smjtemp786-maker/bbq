@@ -1,0 +1,209 @@
+{
+  "project_name": "Brain Bonds",
+  "archetype": "Modern Tactical EdTech (Hybrid: Soft Utility + Performance EdTech)",
+  "emotional_tone": "Inviting, empowering, futuristic yet approachable, structured, child-friendly without looking childish",
+  "theme": {
+    "default_mode": "light",
+    "supported_modes": ["light", "dark"],
+    "palette": {
+      "primary": {
+        "main": "#2563EB",
+        "hover": "#1D4ED8",
+        "light": "#EFF6FF",
+        "foreground": "#FFFFFF"
+      },
+      "secondary": {
+        "main": "#0D9488",
+        "hover": "#0F766E",
+        "light": "#F0FDFA",
+        "foreground": "#FFFFFF"
+      },
+      "accent_vibrant": {
+        "amber": "#F59E0B",
+        "indigo": "#4F46E5",
+        "emerald": "#10B981",
+        "rose": "#F43F5E",
+        "cyan": "#06B6D4",
+        "purple": "#9333EA"
+      },
+      "neutral_light": {
+        "bg_main": "#F8FAFC",
+        "bg_surface": "#FFFFFF",
+        "bg_subtle": "#F1F5F9",
+        "border": "#E2E8F0",
+        "text_primary": "#0F172A",
+        "text_secondary": "#475569",
+        "text_muted": "#64748B"
+      },
+      "neutral_dark": {
+        "bg_main": "#0B0F19",
+        "bg_surface": "#111827",
+        "bg_subtle": "#1F2937",
+        "border": "#374151",
+        "text_primary": "#F9FAFB",
+        "text_secondary": "#9CA3AF",
+        "text_muted": "#6B7280"
+      },
+      "labs": {
+        "coding_workspace": "#0F172A",
+        "robotics_grid_bg": "#1E293B",
+        "robotics_grid_line": "#334155",
+        "robot_color": "#06B6D4",
+        "target_color": "#10B981",
+        "obstacle_color": "#EF4444",
+        "game_canvas_bg": "#020617"
+      }
+    }
+  },
+  "typography": {
+    "heading_font": "Outfit, Manrope, sans-serif",
+    "body_font": "Plus Jakarta Sans, Inter, sans-serif",
+    "mono_font": "JetBrains Mono, Source Code Pro, monospace",
+    "scale": {
+      "h1": "text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight",
+      "h3": "text-xl sm:text-2xl font-semibold tracking-tight",
+      "h4": "text-lg sm:text-xl font-semibold",
+      "body_lg": "text-lg font-normal leading-relaxed",
+      "body_base": "text-base font-normal leading-normal",
+      "body_sm": "text-sm font-normal text-muted-foreground",
+      "caption": "text-xs font-medium uppercase tracking-widest text-muted-foreground"
+    },
+    "rules": [
+      "DO NOT use Inter or Arial for main headings; use Outfit or Manrope for an energetic, professional edtech feel.",
+      "Headlines > 32px MUST use tracking-tight or tracking-tighter.",
+      "Overlines / badges MUST be uppercase with letter spacing tracking-wider or tracking-widest.",
+      "In lab workspaces, code panels MUST strictly use mono_font with syntax coloring."
+    ]
+  },
+  "spacing_and_layout": {
+    "container_padding": "px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto",
+    "card_padding": "p-5 sm:p-6",
+    "gap_scale": {
+      "dashboard_grid": "gap-4 sm:gap-6",
+      "section_stack": "space-y-6 sm:space-y-8",
+      "lab_workspace": "gap-3 sm:gap-4"
+    },
+    "border_radius": {
+      "card": "rounded-2xl",
+      "button": "rounded-xl",
+      "badge": "rounded-full",
+      "lab_node": "rounded-lg"
+    },
+    "rules": [
+      "Containers with borders must have internal padding (p-5 or p-6) to avoid text colliding with edges.",
+      "Dashboards follow High Density Grid rules (MODE B) with 1px crisp borders, elevated headers, and zero awkward empty space.",
+      "Student learning dashboard uses friendly oversized progress indicators, visual lab entrance cards with vibrant accent borders.",
+      "Desktop-first responsive design for student learning views & labs, while admin/trainer dashboards scale down seamlessly to mobile."
+    ]
+  },
+  "navigation_and_header": {
+    "styles": "bg-background/80 backdrop-blur-md border-b border-border sticky top-0 z-50 transition-colors duration-200",
+    "requirements": [
+      "Every dashboard layout MUST feature a crisp navbar with Logo, Role Badge ('Super Admin', 'Center Admin', 'Trainer', 'Student'), Center Selector / License status indicator, Offline/Online Sync pill, Theme Switcher, and User Profile menu.",
+      "Header must NOT be fully transparent; use glassmorphism backdrop-blur-md with semi-opaque background.",
+      "Include explicit data-testid attributes on logo, role-switcher, offline status indicator, and navigation links."
+    ]
+  },
+  "role_dashboards": {
+    "super_admin": {
+      "focus": "Global center oversight, software licenses, curriculum distribution, trainer assignments, and revenue/usage metrics.",
+      "key_components": [
+        "License quota gauge and expiration countdown cards",
+        "Tuition center network map/table with active student counts",
+        "Global analytics line charts (Monthly active students, Offline sync health)",
+        "Curriculum & Module release manager"
+      ]
+    },
+    "center_admin": {
+      "focus": "Local center management: Student batches, local trainers, student attendance, center license usage.",
+      "key_components": [
+        "Batch status grid (Active classes, Trainer assigned, Student enrollment capacity)",
+        "Attendance logger and sync log",
+        "Local center performance stats (Lesson completion rates, Quiz averages)",
+        "Student onboarding modal & credentials export"
+      ]
+    },
+    "trainer": {
+      "focus": "Classroom instruction, project reviews, grading student quizzes, monitoring real-time lab progress.",
+      "key_components": [
+        "Assigned batch selector",
+        "Student table with completion badges, last active lab, quiz scores",
+        "Project approval queue (Approve/Feedback modal for coding and game projects)",
+        "Quick quiz trigger / classroom leaderboard toggle"
+      ]
+    },
+    "student": {
+      "focus": "Engaging, gamified learning path, interactive lab launcher, continue learning cards, and earned achievements.",
+      "key_components": [
+        "Personalized Welcome Card ('Welcome back, Alex! Ready to code?')",
+        "Continue Learning card with high-contrast progress bar & 'Jump Back In' CTA button",
+        "Overall Stats Ring (Overall progress %, Course completed, Projects submitted, Quiz score average)",
+        "Interactive Lab Entrance Cards (Coding Lab, Game Lab, Robotics Simulator, AI Lab)",
+        "Achievements / Badges showcase with unlock tooltips & certificate downloader"
+      ]
+    }
+  },
+  "interactive_labs": {
+    "blockly_coding_lab": {
+      "layout": "Left: Block Categories Palette (Logic, Loops, Math, Text, Variables, Actions) | Center: Visual Workspace with drag-drop visual blocks | Right: Generated Code (JS/Python toggle) + Live Canvas/Console Output | Bottom: Run, Stop, Reset, Save Offline buttons",
+      "style": "Clean dark/light theme options, vibrant category colors for blocks (Orange for Logic, Teal for Loops, Violet for Actions), high-contrast Run button (#10B981)"
+    },
+    "game_lab_2d": {
+      "layout": "Starter Templates list (Pong, Maze Runner, Space Shooter, Platformer) | Code / Config Editor | 2D HTML5 Canvas preview screen | Inspector controls",
+      "style": "Arcade-inspired dark frame around 2D canvas (#020617) with retro retro-glow status indicators and quick restart/debug buttons"
+    },
+    "robotics_simulator": {
+      "layout": "Interactive 2D Grid Board (Obstacles, Power-ups, Sensor Rays, Target Cell) | Command Sequence Builder / Code Panel (Forward, Turn Left, Turn Right, Sense Distance, Pick Up) | Real-time Robot Execution Animation | Sensor Telemetry Panel",
+      "style": "Tactical grid aesthetics (#1E293B background with cyan sensor rays, animated robot icon, emerald target flag, ruby obstacles)"
+    },
+    "quiz_system": {
+      "layout": "Card-based question interface | Stepper progress indicator | Single/Multiple choice radio/checkbox choices | Immediate feedback mode or timed exam mode | Result breakdown card with explanation",
+      "style": "Generous spacing, smooth transition on option selection, distinct success green (#10B981) and error crimson (#EF4444) callouts"
+    }
+  },
+  "image_urls": {
+    "hero_kids_robotics": "https://images.unsplash.com/photo-1585980243496-fe29a36bd382?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODF8MHwxfHNlYXJjaHw0fHxraWRzJTIwbGVhcm5pbmclMjByb2JvdGljcyUyMGNvZGluZyUyMGNsYXNzfGVufDB8fHx8MTc5MDUyODY5MXww&ixlib=rb-4.1.0&q=85",
+    "robot_kit_lego": "https://images.unsplash.com/photo-1737228813532-9cd720824ba7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODF8MHwxfHNlYXJjaHwyfHxraWRzJTIwbGVhcm5pbmclMjByb2JvdGljcyUyMGNvZGluZyUyMGNsYXNzfGVufDB8fHx8MTc5MDUyODY5MXww&ixlib=rb-4.1.0&q=85",
+    "student_tablet_coding": "https://images.unsplash.com/photo-1568585219057-9206080e6c74?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODF8MHwxfHNlYXJjaHwzfHxraWRzJTIwbGVhcm5pbmclMjByb2JvdGljcyUyMGNvZGluZyUyMGNsYXNzfGVufDB8fHx8MTc5MDUyODY5MXww&ixlib=rb-4.1.0&q=85",
+    "child_block_coding": "https://images.unsplash.com/photo-1603354350317-6f7aaa5911c5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODF8MHwxfHNlYXJjaHwxfHxraWRzJTIwbGVhcm5pbmclMjByb2JvdGljcyUyMGNvZGluZyUyMGNsYXNzfGVufDB8fHx8MTc5MDUyODY5MXww&ixlib=rb-4.1.0&q=85"
+  },
+  "micro_interactions_and_motion": {
+    "hover_effects": "Card hover: subtle -translate-y-1 transform with shadow-md to shadow-xl elevation; button hover: distinct contrast boost and active scale effect (active:scale-95).",
+    "transitions": "Explicit property transitions only: transition-transform duration-200 ease-out, transition-colors duration-200 ease-in-out. NO universal transition: all.",
+    "badges_and_achievements": "Unlocking achievement plays subtle sparkle confetti or glow frame, highlighting mastery.",
+    "offline_first_indicator": "Live status pill: 'Offline Mode (Local Storage Synced)' in amber (#F59E0B) or 'Online (Synced)' in emerald (#10B981) at header."
+  },
+  "testing_guidelines": {
+    "data_testid_convention": "kebab-case, role-based, unique for all interactive and key metrics.",
+    "required_test_ids": [
+      "data-testid='login-role-selector'",
+      "data-testid='login-submit-button'",
+      "data-testid='dashboard-welcome-heading'",
+      "data-testid='student-continue-learning-card'",
+      "data-testid='student-progress-overall'",
+      "data-testid='lab-card-blockly'",
+      "data-testid='lab-card-game'",
+      "data-testid='lab-card-robotics'",
+      "data-testid='lab-card-ai'",
+      "data-testid='blockly-run-button'",
+      "data-testid='blockly-stop-button'",
+      "data-testid='robotics-step-button'",
+      "data-testid='robotics-reset-button'",
+      "data-testid='quiz-option-item'",
+      "data-testid='quiz-submit-button'",
+      "data-testid='trainer-student-table'",
+      "data-testid='super-admin-licenses-table'",
+      "data-testid='theme-toggle-button'",
+      "data-testid='offline-status-pill'"
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Strictly follow the color tokens and typography scale defined in design_guidelines.json.",
+    "Use pre-built Shadcn UI components located at /app/frontend/src/components/ui/ (Dialog, Card, Select, Tabs, Table, Progress, Badge, Sonner for notifications).",
+    "Ensure the app works offline-first using localStorage/IndexedDB fallback for tuition centers with low/no connectivity.",
+    "Implement clear role-based switching or seamless demo role selector so reviewers can easily test Super Admin, Center Admin, Trainer, and Student dashboards.",
+    "Include full interactive labs: Blockly Block Coding, 2D Game Lab with HTML5 canvas, and 2D Robotics simulator grid with obstacles and distance sensors.",
+    "Add test-ids (data-testid) to all buttons, tabs, inputs, cards, and key statistics."
+  ]
+}
